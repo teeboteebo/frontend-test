@@ -14,6 +14,9 @@ const temps = [
 
 // Receive string of temps one after each other
 function outputTemp(tempRow) {
+  // Set target to 0
+  const target = 0;
+  
   // If string is empty, return 0
   if (!tempRow) {
     return 0
@@ -21,8 +24,11 @@ function outputTemp(tempRow) {
   // Convert string to array of integers
   const tempsArr = tempRow.split(' ').map(temp => parseInt(temp, 10))
 
-  // Return temp closest to 0
-  return getClosest(tempsArr, 0)
+  // If array contains the target, return it.
+  if(tempsArr.includes(target)) return 0
+
+  // Return temp closest to target
+  return getClosest(tempsArr, target)
 }
 
 

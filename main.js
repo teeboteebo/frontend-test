@@ -25,7 +25,7 @@ function outputTemp(tempRow) {
   const tempsArr = tempRow.split(' ').map(temp => parseInt(temp, 10))
 
   // If array contains the target, return it.
-  if(tempsArr.includes(target)) return 0
+  if(tempsArr.includes(target)) return target
 
   // Return temp closest to target
   return getClosest(tempsArr, target)
